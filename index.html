@@ -182,6 +182,7 @@
         background: url("background.jpg") no-repeat center center/cover;
         filter: blur(5px);
         z-index: 1;
+        background-color: rgba(0, 0, 0, 0.4);
       }
 
       #home * {
@@ -376,10 +377,10 @@
           <li class="dropdown">
             <a href="#">Oferta</a>
             <div class="dropdown-content">
-              <a href="#">Prefabrykacja szaf</a>
-              <a href="#">Frezowanie</a>
-              <a href="#">Obróbka laserowa</a>
-              <a href="../AMB-Poland/strona1.html">Montaż elektryczny</a>
+              <a href="../AMB-Poland/strona1.html">Prefabrykacja szaf</a>
+              <a href="../AMB-Poland/strona2.html">Frezowanie</a>
+              <a href="../AMB-Poland/strona3.html">Obróbka laserowa</a>
+              <a href="../AMB-Poland/strona4.html">Montaż elektryczny</a>
             </div>
           </li>
           <li><a href="#contact-form">Kontakt</a></li>
@@ -456,21 +457,36 @@
       const montazElektrycznyLink = document.querySelector(
         '.dropdown-content a[href="../AMB-Poland/strona1.html"]'
       );
+      const frezowanieLink = document.querySelector(
+        '.dropdown-content a[href="../AMB-Poland/strona2.html"]'
+      );
+      const obrobkaLaseremLink = document.querySelector(
+        '.dropdown-content a[href="../AMB-Poland/strona3.html"]'
+      );
+      const prefabrykacjaLink = document.querySelector(
+        '.dropdown-content a[href="../AMB-Poland/strona4.html"]'
+      );
 
-      let dropdownOpen = false;
+      montazElektrycznyLink.addEventListener("click", function (e) {
+        e.stopPropagation();
+        window.location.href = this.href;
+      });
+      frezowanieLink.addEventListener("click", function (e) {
+        e.stopPropagation();
+        window.location.href = this.href;
+      });
+      obrobkaLaseremLink.addEventListener("click", function (e) {
+        e.stopPropagation();
+        window.location.href = this.href;
+      });
+      prefabrykacjaLink.addEventListener("click", function (e) {
+        e.stopPropagation();
+        window.location.href = this.href;
+      });
 
       dropdownLi.addEventListener("click", function (e) {
         e.preventDefault();
-        if (dropdownOpen) {
-          // Jeśli menu jest otwarte, to kliknięcie ma przenieść do Montaż Elektryczny, o ile kliknięto na ten link
-          if (e.target === montazElektrycznyLink) {
-            window.location.href = montazElektrycznyLink.href;
-          }
-        } else {
-          // Jeśli menu jest zamknięte, to kliknięcie ma je otworzyć
-          this.classList.toggle("dropdown-active");
-          dropdownOpen = true;
-        }
+        this.classList.toggle("dropdown-active"); // Przełączamy klasę, która otwiera/zamyka menu
       });
 
       //Dodajemy nasluchiwanie na kazdy link w menu rozwijalnym, żeby po kliknieciu zwinal menu
@@ -478,7 +494,6 @@
       dropdownLinks.forEach((link) => {
         link.addEventListener("click", () => {
           dropdownLi.classList.remove("dropdown-active");
-          dropdownOpen = false;
         });
       });
     </script>
