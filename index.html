@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
@@ -378,7 +379,7 @@
               <a href="#">Prefabrykacja szaf</a>
               <a href="#">Frezowanie</a>
               <a href="#">Obróbka laserowa</a>
-              <a href="../AMB-Poland/strona1.html">Montaż elektryczny</a>
+              <a href="../strona1.html">Montaż elektryczny</a>
             </div>
           </li>
           <li><a href="#contact-form">Kontakt</a></li>
@@ -452,10 +453,33 @@
 
       //Obsługa rozwijania menu na urządzeniach dotykowych
       const dropdownLi = document.querySelector(".dropdown");
+      const montazElektrycznyLink = document.querySelector(
+        '.dropdown-content a[href="strona1.html"]'
+      );
+
+      let dropdownOpen = false;
 
       dropdownLi.addEventListener("click", function (e) {
         e.preventDefault();
-        this.classList.toggle("dropdown-active");
+        if (dropdownOpen) {
+          // Jeśli menu jest otwarte, to kliknięcie ma przenieść do Montaż Elektryczny, o ile kliknięto na ten link
+          if (e.target === montazElektrycznyLink) {
+            window.location.href = montazElektrycznyLink.href;
+          }
+        } else {
+          // Jeśli menu jest zamknięte, to kliknięcie ma je otworzyć
+          this.classList.toggle("dropdown-active");
+          dropdownOpen = true;
+        }
+      });
+
+      //Dodajemy nasluchiwanie na kazdy link w menu rozwijalnym, żeby po kliknieciu zwinal menu
+      const dropdownLinks = document.querySelectorAll(".dropdown-content a");
+      dropdownLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          dropdownLi.classList.remove("dropdown-active");
+          dropdownOpen = false;
+        });
       });
     </script>
   </body>
