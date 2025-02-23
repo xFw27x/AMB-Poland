@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Montaż Elektryczny - AMB Poland</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="ikona.ico" />
+    <style>
+      /* Kopiujemy tutaj cały kod CSS ze strony głównej */
+      /* I dodajemy dodatkowe style dla tej podstrony */
+
+      /* Sekcja Zawartości */
+      .content {
+        padding: 50px 20px;
+        text-align: left;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .content h2 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
+
+      .content p {
+        font-size: 1.2em;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+
+      /* Galeria Zdjęć */
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 30px;
+      }
+
+      .gallery img {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .gallery img:hover {
+        transform: scale(1.1);
+      }
+
+      /* Animacje */
+      .fade-in {
+        animation: fadeIn 1s ease forwards;
+        opacity: 0;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">
+        <img src="logo.png" alt="Logo" />
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Strona Główna</a></li>
+          <li class="dropdown">
+            <a href="#">Oferta</a>
+            <div class="dropdown-content">
+              <a href="#">Prefabrykacja szaf</a>
+              <a href="#">Frezowanie</a>
+              <a href="#">Obróbka laserowa</a>
+              <a href="#">Montaż elektryczny</a>
+            </div>
+          </li>
+          <li><a href="index.html#contact-form">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="language-switcher">
+        <a href="#">EN</a> | <a href="#">DE</a> |
+        <a href="#">PL</a>
+      </div>
+    </header>
+
+    <section class="content fade-in">
+      <h2>Montaż Elektryczny</h2>
+      <p>
+        Oferujemy profesjonalny montaż elektryczny dla różnorodnych aplikacji,
+        od instalacji domowych po zaawansowane systemy przemysłowe. Nasz zespół
+        wykwalifikowanych elektryków zapewnia bezpieczne i niezawodne
+        rozwiązania, zgodne z najnowszymi standardami i normami.
+      </p>
+      <p>
+        Niezależnie od skali projektu, gwarantujemy precyzję, terminowość i
+        profesjonalizm na każdym etapie realizacji. Dbamy o każdy detal, aby
+        zapewnić długotrwałą i bezawaryjną pracę instalacji.
+      </p>
+
+      <h3>Nasze Usługi Montażu Elektrycznego obejmują:</h3>
+      <ul>
+        <li>Instalacje elektryczne w budynkach mieszkalnych i komercyjnych</li>
+        <li>Montaż systemów oświetleniowych i alarmowych</li>
+        <li>Podłączenia maszyn i urządzeń przemysłowych</li>
+        <li>Serwis i konserwacja instalacji elektrycznych</li>
+      </ul>
+
+      <div class="gallery">
+        <img src="montaz1.jpg" alt="Montaż 1" />
+        <img src="montaz2.jpg" alt="Montaż 2" />
+        <img src="montaz3.jpg" alt="Montaż 3" />
+      </div>
+    </section>
+
+    <section id="contact-form">
+      <h2>Skontaktuj się z nami</h2>
+      <form action="#" method="post">
+        <label for="name">Imię:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Wiadomość:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Wyślij Wiadomość</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2025 AMB Poland Sp. z o.o. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+      // Skrypt animacji
+      const sections = document.querySelectorAll(".fade-in");
+      sections.forEach((section) => {
+        section.classList.add("appear"); // Dodajemy klasę "appear" natychmiast
+      });
+    </script>
+  </body>
+</html>
