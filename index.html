@@ -1,13 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>HTML + CSS</title>
+    <title>HTML</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
+    
   </head>
   <body>
-    <h1>This is a simple HTML + CSS template!</h1>
+    <header>
+      <a href="#" class="logo">
+        <img src="logo.png" alt="Logo" />
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#home">Strona Główna</a></li>
+          <li>
+            <a href="#">Funkcje</a>
+            <div class="dropdown-content">
+              <a href="#">Opcja 1</a>
+              <a href="#">Opcja 2</a>
+              <a href="#">Opcja 3</a>
+              <a href="#">Opcja 4</a>
+            </div>
+          </li>
+          <li><a href="#contact-form">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="language-switcher">
+        <a href="#">EN</a>
+        <a href="#">DE</a>
+      </div>
+    </header>
+
+    <section id="home">
+      <h1>Witamy w Prezentacji Produktu</h1>
+      <p>Odkryj funkcje, które wyróżniają nasze produkty.</p>
+      <a href="#features" class="button">Poznaj Funkcje</a>
+    </section>
+
+    <section id="features">
+      <h2>Nasze Unikalne Funkcje</h2>
+      <div class="feature">
+        <img src="feature1.jpg" alt="Funkcja 1" />
+        <h3>Przyjazny Interfejs</h3>
+        <p>Intuicyjny design ułatwiający codzienne zadania.</p>
+      </div>
+      <div class="feature">
+        <img src="feature2.jpg" alt="Funkcja 2" />
+        <h3>Wysoka Wydajność</h3>
+        <p>Szybkie i niezawodne działanie w każdej sytuacji.</p>
+      </div>
+      <div class="feature">
+        <img src="feature3.jpg" alt="Funkcja 3" />
+        <h3>Opcje Personalizacji</h3>
+        <p>Dostosuj produkt do swoich indywidualnych potrzeb.</p>
+      </div>
+    </section>
+
+    <section id="contact-form">
+      <h2>Skontaktuj się z nami</h2>
+      <form action="#" method="post">
+        <label for="name">Imię:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Wiadomość:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Wyślij Wiadomość</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2025 Prezentacja Produktu. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+      const sections = document.querySelectorAll("section");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("appear");
+          }
+        });
+      });
+
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+    </script>
   </body>
 </html>
