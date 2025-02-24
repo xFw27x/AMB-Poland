@@ -305,6 +305,35 @@
         background-color: #64b5f6;
       }
 
+      /* Style dla kontenera numeru telefonu */
+      .phone-container {
+        display: flex; /* Ustawiamy flexbox */
+        align-items: center; /* Wyśrodkowujemy pionowo */
+      }
+
+      /* Style dla listy rozwijanej numeru kierunkowego */
+      #countryCode {
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+        font-family: "Open Sans", sans-serif;
+        margin-right: 10px;
+        width: auto;
+        flex-shrink: 0;
+        align-self: flex-start; /* Wyrównanie do górnej krawędzi */
+      }
+
+      /* Style dla pola numeru telefonu */
+      #phone {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+        font-family: "Open Sans", sans-serif;
+      }
+
       /* Informacje Kontaktowe */
       .company-info {
         margin-top: 20px; /* Dodajemy margines, aby oddzielić od formularza */
@@ -319,11 +348,13 @@
         font-size: 1.2em;
         margin-bottom: 10px;
         color: #333;
+        letter-spacing: 1px;
       }
 
       .company-info p {
         margin-bottom: 5px;
         color: #555;
+        letter-spacing: 1px;
       }
 
       /* Kontener dla Formularza i Informacji */
@@ -472,7 +503,22 @@
           <input type="email" id="email" name="email" required />
 
           <label for="phone">Numer Telefonu:</label>
-          <input type="text" id="phone" name="phone" required />
+          <div class="phone-container">
+            <select id="countryCode" name="countryCode">
+              <option value="+48">+48 (Polska)</option>
+              <option value="+44">+44 (Wielka Brytania)</option>
+              <option value="+1">+1 (Stany Zjednoczone)</option>
+              <!-- Dodaj więcej opcji numerów kierunkowych -->
+            </select>
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              required
+              inputmode="numeric"
+            />
+          </div>
+          <input type="hidden" id="fullPhone" name="fullPhone" required />
 
           <label for="message">Wiadomość:</label>
           <textarea id="message" name="message" rows="5" required></textarea>
@@ -553,6 +599,24 @@
           dropdownLi.classList.remove("dropdown-active");
         });
       });
+
+      // Ograniczenie wprowadzania znaków w polu numeru telefonu tylko do cyfr i łączenie z numerem kierunkowym
+      const phoneInput = document.getElementById("phone");
+      const countryCodeSelect = document.getElementById("countryCode");
+      const fullPhoneInput = document.getElementById("fullPhone");
+
+      function updateFullPhone() {
+        const countryCode = countryCodeSelect.value;
+        const phone = phoneInput.value;
+        fullPhoneInput.value = countryCode + phone;
+      }
+
+      phoneInput.addEventListener("input", function () {
+        this.value = this.value.replace(/[^0-9]/g, "");
+        updateFullPhone();
+      });
+
+      countryCodeSelect.addEventListener("change", updateFullPhone);
     </script>
   </body>
 </html>
