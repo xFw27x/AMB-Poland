@@ -253,13 +253,10 @@
 
       /* Formularz Kontaktowy */
       #contact-form {
-        max-width: 600px;
-        margin: 40px auto;
-        padding: 30px;
-        background-color: #fff;
-        border-radius: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-        text-align: left;
+        padding-left: 20px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-right: 20px;
       }
 
       #contact-form h2 {
@@ -306,6 +303,38 @@
 
       #contact-form button[type="submit"]:hover {
         background-color: #64b5f6;
+      }
+
+      /* Informacje Kontaktowe */
+      .company-info {
+        margin-top: 20px; /* Dodajemy margines, aby oddzielić od formularza */
+        text-align: left;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      .company-info h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .company-info p {
+        margin-bottom: 5px;
+        color: #555;
+      }
+
+      /* Kontener dla Formularza i Informacji */
+      .contact-container {
+        margin: 30px 0;
+        padding: 20px;
+        border-radius: 15px;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        text-align: left;
       }
 
       /* Stopka */
@@ -355,7 +384,17 @@
           max-width: 100%;
         }
 
+        .contact-container {
+          padding: 10px;
+        }
+
         #contact-form {
+          padding: 20px;
+          max-width: 100%;
+        }
+
+        .company-info {
+          margin-top: 20px;
           padding: 20px;
         }
       }
@@ -419,22 +458,36 @@
 
     <section id="contact-form">
       <h2>Skontaktuj się z nami</h2>
-      <form
-        action="https://formspree.io/f/xanqgwrz"
-        method="post"
-        enctype="multipart/form-data"
-      >
-        <label for="name">Imię:</label>
-        <input type="text" id="name" name="name" required />
+      <div class="contact-container">
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/xanqgwrz"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <label for="name">Imię:</label>
+          <input type="text" id="name" name="name" required />
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
 
-        <label for="message">Wiadomość:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+          <label for="phone">Numer Telefonu:</label>
+          <input type="text" id="phone" name="phone" required />
 
-        <button type="submit">Wyślij Wiadomość</button>
-      </form>
+          <label for="message">Wiadomość:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Wyślij Wiadomość</button>
+        </form>
+
+        <div class="company-info">
+          <h3>AMB-Poland Sp. Z O. O.</h3>
+          <p>Adres: Przykładowa 123, 00-000 Miasto</p>
+          <p>NIP: 1234567890</p>
+          <p>Telefon: +48 123 456 789</p>
+          <p>Email: info@ambpoland.pl</p>
+        </div>
+      </div>
     </section>
 
     <footer>
