@@ -377,10 +377,10 @@
           <li class="dropdown">
             <a href="#">Oferta</a>
             <div class="dropdown-content">
-              <a href="../AMB-Poland/strona1.html">Prefabrykacja szaf</a>
-              <a href="../AMB-Poland/strona2.html">Frezowanie</a>
-              <a href="../AMB-Poland/strona3.html">Obróbka laserowa</a>
-              <a href="../AMB-Poland/strona4.html">Montaż elektryczny</a>
+              <a href="strona1.html">Prefabrykacja szaf</a>
+              <a href="strona2.html">Frezowanie</a>
+              <a href="strona3.html">Obróbka laserowa</a>
+              <a href="strona4.html">Montaż elektryczny</a>
             </div>
           </li>
           <li><a href="#contact-form">Kontakt</a></li>
@@ -419,7 +419,7 @@
 
     <section id="contact-form">
       <h2>Skontaktuj się z nami</h2>
-      <form action="#" method="post">
+      <form action="sendmail.php" method="post">
         <label for="name">Imię:</label>
         <input type="text" id="name" name="name" required />
 
@@ -455,16 +455,16 @@
       //Obsługa rozwijania menu na urządzeniach dotykowych
       const dropdownLi = document.querySelector(".dropdown");
       const montazElektrycznyLink = document.querySelector(
-        '.dropdown-content a[href="../AMB-Poland/strona1.html"]'
+        '.dropdown-content a[href="strona1.html"]'
       );
       const frezowanieLink = document.querySelector(
-        '.dropdown-content a[href="../AMB-Poland/strona2.html"]'
+        '.dropdown-content a[href="strona2.html"]'
       );
       const obrobkaLaseremLink = document.querySelector(
-        '.dropdown-content a[href="../AMB-Poland/strona3.html"]'
+        '.dropdown-content a[href="strona3.html"]'
       );
       const prefabrykacjaLink = document.querySelector(
-        '.dropdown-content a[href="../AMB-Poland/strona4.html"]'
+        '.dropdown-content a[href="strona4.html"]'
       );
 
       montazElektrycznyLink.addEventListener("click", function (e) {
