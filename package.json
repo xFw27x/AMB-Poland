@@ -15,10 +15,6 @@
   "author": "Ives van Hoorne",
   "license": "MIT",
 
-  "require": {
-    "brevo/brevo-php": "^2.0"
-  },
-
   "devDependencies": {
     "serve": "11.2.0"
   }
