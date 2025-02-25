@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>AMB Poland Sp Z. O. O.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="ikona.ico" />
+  </head>
+  <body>
+    <div class="top-logo">
+      <a href="#">
+        <img src="logo.png" alt="Großes Logo" />
+      </a>
+    </div>
+    <header>
+      <a href="#" class="logo">
+        <img src="logo.png" alt="Logo" />
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#home">Startseite</a></li>
+          <li class="dropdown">
+            <a href="#">Angebot</a>
+            <div class="dropdown-content">
+              <a href="prefabrykacja.html">Schaltschrankbau</a>
+              <a href="frezowanie.html">Fräsen</a>
+              <a href="laser.html">Laserbearbeitung</a>
+              <a href="montazElektryczny.html">Elektromontage</a>
+            </div>
+          </li>
+          <li><a href="sklep.html">Shop</a></li>
+          <li><a href="#contact-form">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="language-switcher">
+        <a href="index_en.html">EN</a> | <a href="#">DE</a> |
+        <a href="index.html">PL</a>
+      </div>
+    </header>
+    <section id="home">
+      <h1>Professionelle Elektrodienstleistungen</h1>
+      <p>Zuverlässigkeit und Qualität in jedem Projekt.</p>
+      <a href="#features" class="button">Entdecken Sie unser Angebot</a>
+    </section>
+
+    <section id="features">
+      <h2>Unser Angebot:</h2>
+      <div class="feature">
+        <h3><i class="fas fa-box"></i> Schaltschrankbau</h3>
+        <p>Solide Ausführung, zuverlässige Lösungen.</p>
+      </div>
+      <div class="feature">
+        <h3><i class="fas fa-plug"></i> Elektromontage</h3>
+        <p>Solide Ausführung, zuverlässige Lösungen.</p>
+      </div>
+      <div class="feature">
+        <h3><i class="fas fa-tools"></i> Fräsen</h3>
+        <p>Moderne Technologien für perfekte Bearbeitung.</p>
+      </div>
+      <div class="feature">
+        <h3><i class="fas fa-radiation"></i> Laserbearbeitung</h3>
+        <p>Präzision und Innovation in der Materialbearbeitung.</p>
+      </div>
+    </section>
+
+    <section id="contact-form">
+      <h2>Kontaktieren Sie uns</h2>
+      <div class="contact-container">
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/xanqgwrz"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">E-Mail:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="phone">Telefonnummer:</label>
+          <div class="phone-container">
+            <select id="countryCode" name="countryCode">
+              <option value="+48">+48 (Polen)</option>
+              <option value="+44">+44 (Großbritannien)</option>
+              <option value="+1">+1 (Vereinigte Staaten)</option>
+              <option value="+49">+49 (Deutschland)</option>
+              <!-- Füge weitere Ländervorwahlen hinzu -->
+            </select>
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              required
+              inputmode="numeric"
+            />
+          </div>
+          <input type="hidden" id="fullPhone" name="fullPhone" required />
+
+          <label for="message">Nachricht:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Nachricht senden</button>
+        </form>
+
+        <div class="company-info">
+          <h3>AMB-Poland Sp. Z. o. o.</h3>
+          <p>Adresse: ul. Szlak 77/222, 31-153 Kraków, Polen</p>
+          <p>Steueridentifikationsnummer: 6762622772</p>
+          <p>Telefon: +48 123 456 789</p>
+          <p>E-Mail: info@ambpoland.pl</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        © 2025 AMB-Poland. Alle Rechte vorbehalten. Die Nutzung der Website
+        unterliegt den Nutzungsbedingungen.
+      </p>
+    </footer>
+
+    <script>
+      const sections = document.querySelectorAll("section");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("appear");
+          }
+        });
+      });
+
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+
+      //Obsługa rozwijania menu na urządzeniach dotykowych
+      const dropdownLink = document.querySelector(".dropdown > a"); // Wybieramy link "Oferta"
+      const dropdownLi = document.querySelector(".dropdown"); // Wybieramy element LI
+
+      dropdownLink.addEventListener("click", function (e) {
+        e.preventDefault(); // Zapobiegamy domyślnej akcji (przejściu do #)
+        dropdownLi.classList.toggle("dropdown-active"); // Przełączamy klasę na LI
+      });
+
+      // Ograniczenie wprowadzania znaków w polu numeru telefonu tylko do cyfr i łączenie z numerem kierunkowym
+      const phoneInput = document.getElementById("phone");
+      const countryCodeSelect = document.getElementById("countryCode");
+      const fullPhoneInput = document.getElementById("fullPhone");
+
+      function updateFullPhone() {
+        const countryCode = countryCodeSelect.value;
+        const phone = phoneInput.value;
+        fullPhoneInput.value = countryCode + phone;
+      }
+
+      phoneInput.addEventListener("input", function () {
+        this.value = this.value.replace(/[^0-9]/g, "");
+        updateFullPhone();
+      });
+
+      countryCodeSelect.addEventListener("change", updateFullPhone);
+    </script>
+  </body>
+</html>
