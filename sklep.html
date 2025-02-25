@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sklep - AMB Poland</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="ikona.ico" />
+    <style>
+      /* Dodaj te style do swojego CSS */
+      .content {
+        padding: 20px;
+        opacity: 1; /* Ustawiamy pełną widoczność */
+        transform: translateY(0); /* Resetujemy przesunięcie */
+        transition: none; /* Usuwamy animację */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-logo">
+      <a href="#">
+        <img src="logo.png" alt="Duże Logo" />
+      </a>
+    </div>
+    <header>
+      <a href="#" class="logo">
+        <img src="logo.png" alt="Logo" />
+      </a>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html">Strona Główna</a>
+          </li>
+          <li class="dropdown">
+            <a href="#">Oferta</a>
+            <div class="dropdown-content">
+              <a href="prefabrykacja.html">Prefabrykacja szaf</a>
+              <a href="frezowanie.html">Frezowanie</a>
+              <a href="laser.html">Obróbka laserowa</a>
+              <a href="montazElektryczny.html">Montaż elektryczny</a>
+            </div>
+          </li>
+          <li><a href="sklep.html">Sklep</a></li>
+          <li><a href="../index.html#contact-form">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="language-switcher">
+        <a href="#">EN</a> | <a href="#">DE</a> |
+        <a href="#">PL</a>
+      </div>
+    </header>
+
+    <section class="content">
+      <!-- Usuń klasę fade-in -->
+      <h2>Nasz Sklep</h2>
+      <p>
+        Zapraszamy do zapoznania się z naszymi produktami. Kliknij na zdjęcie,
+        aby przejść do sklepu.
+      </p>
+
+      <div class="product-grid">
+        <div class="product">
+          <a href="https://www.example.com/produkt1">
+            <div class="product-image-container">
+              <img src="../produkt1.jpg" alt="Produkt 1" />
+            </div>
+            <h3>Produkt 1</h3>
+            <p>Krótki opis produktu 1.</p>
+          </a>
+        </div>
+        <div class="product">
+          <a href="https://www.example.com/produkt2">
+            <div class="product-image-container">
+              <img src="../produkt2.jpg" alt="Produkt 2" />
+            </div>
+            <h3>Produkt 2</h3>
+            <p>Krótki opis produktu 2.</p>
+          </a>
+        </div>
+        <div class="product">
+          <a href="https://www.example.com/produkt3">
+            <div class="product-image-container">
+              <img src="../produkt3.jpg" alt="Produkt 3" />
+            </div>
+            <h3>Produkt 3</h3>
+            <p>Krótki opis produktu 3.</p>
+          </a>
+        </div>
+        <!-- Dodaj więcej produktów -->
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        © 2025 AMB-Poland. Wszelkie prawa zastrzeżone. Korzystanie z serwisu
+        oznacza akceptację regulaminu.
+      </p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dropdownLink = document.querySelector(".dropdown > a");
+        const dropdownLi = document.querySelector(".dropdown");
+
+        dropdownLink.addEventListener("click", function (e) {
+          e.preventDefault();
+          dropdownLi.classList.toggle("dropdown-active");
+        });
+      });
+    </script>
+  </body>
+</html>

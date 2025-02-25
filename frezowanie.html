@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Frezowanie - AMB Poland</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="ikona.ico" />
+  </head>
+  <body>
+    <div class="top-logo">
+      <a href="#">
+        <img src="logo.png" alt="Duże Logo" />
+      </a>
+    </div>
+    <header>
+      <a href="#" class="logo">
+        <img src="logo.png" alt="Logo" />
+      </a>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html">Strona Główna</a>
+          </li>
+          <li class="dropdown">
+            <a href="#">Oferta</a>
+            <div class="dropdown-content">
+              <a href="prefabrykacja.html">Prefabrykacja szaf</a>
+              <a href="frezowanie.html">Frezowanie</a>
+              <a href="laser.html">Obróbka laserowa</a>
+              <a href="montazElektryczny.html">Montaż elektryczny</a>
+            </div>
+          </li>
+          <li><a href="sklep.html">Sklep</a></li>
+          <li><a href="index.html#contact-form">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="language-switcher">
+        <a href="#">EN</a> | <a href="#">DE</a> |
+        <a href="#">PL</a>
+      </div>
+    </header>
+
+    <section class="content fade-in">
+      <h2>Frezowanie</h2>
+      <p>
+        Oferujemy usługi frezowania CNC, które charakteryzują się wysoką
+        precyzją i powtarzalnością. Nasz park maszynowy pozwala na obróbkę
+        różnorodnych materiałów, od tworzyw sztucznych po metale.
+      </p>
+      <p>
+        Dzięki nowoczesnym technologiom jesteśmy w stanie realizować zarówno
+        proste, jak i złożone projekty, dostosowane do indywidualnych potrzeb
+        klienta. Gwarantujemy terminowość i konkurencyjne ceny.
+      </p>
+
+      <h3>Nasze Usługi Frezowania obejmują:</h3>
+      <ul style="text-align: left">
+        <li>Frezowanie CNC tworzyw sztucznych</li>
+        <li>Frezowanie CNC metali</li>
+        <li>Wykonywanie prototypów</li>
+        <li>Produkcję seryjną</li>
+      </ul>
+
+      <div class="gallery">
+        <img src="frezowanie1.jpg" alt="Frezowanie 1" />
+        <img src="frezowanie2.jpg" alt="Frezowanie 2" />
+        <img src="frezowanie3.jpg" alt="Frezowanie 3" />
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        © 2025 AMB-Poland. Wszelkie prawa zastrzeżone. Korzystanie z serwisu
+        oznacza akceptację regulaminu.
+      </p>
+    </footer>
+
+    <script>
+      const sections = document.querySelectorAll("section");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("appear");
+          }
+        });
+      });
+
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+
+      //Obsługa rozwijania menu na urządzeniach dotykowych
+      const dropdownLi = document.querySelector(".dropdown");
+      const montazElektrycznyLink = document.querySelector(
+        '.dropdown-content a[href="montazElektryczny.html"]'
+      );
+      const frezowanieLink = document.querySelector(
+        '.dropdown-content a[href="frezowanie.html"]'
+      );
+      const obrobkaLaseremLink = document.querySelector(
+        '.dropdown-content a[href="laser.html"]'
+      );
+      const prefabrykacjaLink = document.querySelector(
+        '.dropdown-content a[href="prefabrykacja.html"]'
+      );
+
+      montazElektrycznyLink.addEventListener("click", function (e) {
+        e.stopPropagation();
+        window.location.href = this.href;
+      });
+      frezowanieLink.addEventListener("click", function (e) {
+        e.stopPropagation();
+        window.location.href = this.href;
+      });
+      obrobkaLaseremLink.addEventListener("click", function (e) {
+        e.stopPropagation();
+        window.location.href = this.href;
+      });
+      prefabrykacjaLink.addEventListener("click", function (e) {
+        e.stopPropagation();
+        window.location.href = this.href;
+      });
+
+      dropdownLi.addEventListener("click", function (e) {
+        e.preventDefault();
+        this.classList.toggle("dropdown-active"); // Przełączamy klasę, która otwiera/zamyka menu
+      });
+
+      //Dodajemy nasluchiwanie na kazdy link w menu rozwijalnym, żeby po kliknieciu zwinal menu
+      const dropdownLinks = document.querySelectorAll(".dropdown-content a");
+      dropdownLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          dropdownLi.classList.remove("dropdown-active");
+        });
+      });
+    </script>
+  </body>
+</html>

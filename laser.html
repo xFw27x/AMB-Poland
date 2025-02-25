@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Obróbka Laserowa - AMB Poland</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="ikona.ico" />
+  </head>
+  <body>
+    <div class="top-logo">
+      <a href="#">
+        <img src="logo.png" alt="Duże Logo" />
+      </a>
+    </div>
+    <header>
+      <a href="#" class="logo">
+        <img src="logo.png" alt="Logo" />
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Strona Główna</a></li>
+          <li class="dropdown">
+            <a href="#">Oferta</a>
+            <div class="dropdown-content">
+              <a href="prefabrykacja.html">Prefabrykacja szaf</a>
+              <a href="frezowanie.html">Frezowanie</a>
+              <a href="laser.html">Obróbka laserowa</a>
+              <a href="montazElektryczny.html">Montaż elektryczny</a>
+            </div>
+          </li>
+          <li><a href="sklep.html">Sklep</a></li>
+          <li><a href="index.html#contact-form">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="language-switcher">
+        <a href="#">EN</a> | <a href="#">DE</a> |
+        <a href="#">PL</a>
+      </div>
+    </header>
+
+    <section class="content fade-in">
+      <h2>Obróbka Laserowa</h2>
+      <p>
+        Oferujemy precyzyjną obróbkę laserową metali i tworzyw sztucznych. Nasze
+        nowoczesne maszyny laserowe pozwalają na realizację skomplikowanych
+        projektów z zachowaniem najwyższej jakości i dokładności.
+      </p>
+      <p>
+        Zapewniamy cięcie, grawerowanie i znakowanie laserowe, dostosowane do
+        indywidualnych potrzeb klienta. Gwarantujemy szybką realizację zamówień
+        i konkurencyjne ceny.
+      </p>
+
+      <h3>Nasze Usługi Obróbki Laserowej obejmują:</h3>
+      <ul style="text-align: left">
+        <li>Cięcie laserowe metali</li>
+        <li>Cięcie laserowe tworzyw sztucznych</li>
+        <li>Grawerowanie laserowe</li>
+        <li>Znakowanie laserowe</li>
+      </ul>
+
+      <div class="gallery">
+        <img src="laser1.jpg" alt="Obróbka Laserowa 1" />
+        <img src="laser2.jpg" alt="Obróbka Laserowa 2" />
+        <img src="laser3.jpg" alt="Obróbka Laserowa 3" />
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        © 2025 AMB-Poland. Wszelkie prawa zastrzeżone. Korzystanie z serwisu
+        oznacza akceptację regulaminu.
+      </p>
+    </footer>
+
+    <script>
+      // Skrypt animacji
+      const sections = document.querySelectorAll(".fade-in");
+      sections.forEach((section) => {
+        section.classList.add("appear"); // Dodajemy klasę "appear" natychmiast
+      });
+    </script>
+  </body>
+</html>
