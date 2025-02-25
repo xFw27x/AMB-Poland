@@ -560,48 +560,12 @@
       });
 
       //Obsługa rozwijania menu na urządzeniach dotykowych
-      const dropdownLi = document.querySelector(".dropdown");
-      const montazElektrycznyLink = document.querySelector(
-        '.dropdown-content a[href="montazElektryczny.html"]'
-      );
-      const frezowanieLink = document.querySelector(
-        '.dropdown-content a[href="frezowanie.html"]'
-      );
-      const obrobkaLaseremLink = document.querySelector(
-        '.dropdown-content a[href="laser.html"]'
-      );
-      const prefabrykacjaLink = document.querySelector(
-        '.dropdown-content a[href="prefabrykacja.html"]'
-      );
+      const dropdownLink = document.querySelector(".dropdown > a"); // Wybieramy link "Oferta"
+      const dropdownLi = document.querySelector(".dropdown"); // Wybieramy element LI
 
-      montazElektrycznyLink.addEventListener("click", function (e) {
-        e.stopPropagation();
-        window.location.href = this.href;
-      });
-      frezowanieLink.addEventListener("click", function (e) {
-        e.stopPropagation();
-        window.location.href = this.href;
-      });
-      obrobkaLaseremLink.addEventListener("click", function (e) {
-        e.stopPropagation();
-        window.location.href = this.href;
-      });
-      prefabrykacjaLink.addEventListener("click", function (e) {
-        e.stopPropagation();
-        window.location.href = this.href;
-      });
-
-      dropdownLi.addEventListener("click", function (e) {
-        e.preventDefault();
-        this.classList.toggle("dropdown-active"); // Przełączamy klasę, która otwiera/zamyka menu
-      });
-
-      //Dodajemy nasluchiwanie na kazdy link w menu rozwijalnym, żeby po kliknieciu zwinal menu
-      const dropdownLinks = document.querySelectorAll(".dropdown-content a");
-      dropdownLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          dropdownLi.classList.remove("dropdown-active");
-        });
+      dropdownLink.addEventListener("click", function (e) {
+        e.preventDefault(); // Zapobiegamy domyślnej akcji (przejściu do #)
+        dropdownLi.classList.toggle("dropdown-active"); // Przełączamy klasę na LI
       });
 
       // Ograniczenie wprowadzania znaków w polu numeru telefonu tylko do cyfr i łączenie z numerem kierunkowym
