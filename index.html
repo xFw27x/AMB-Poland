@@ -447,10 +447,10 @@
           <li class="dropdown">
             <a href="#">Oferta</a>
             <div class="dropdown-content">
-              <a href="strona1.html">Prefabrykacja szaf</a>
-              <a href="strona2.html">Frezowanie</a>
-              <a href="strona3.html">Obróbka laserowa</a>
-              <a href="strona4.html">Montaż elektryczny</a>
+              <a href="pl/prefabrykacja.html">Prefabrykacja szaf</a>
+              <a href="frezowanie.html">Frezowanie</a>
+              <a href="laser.html">Obróbka laserowa</a>
+              <a href="montazElektryczny.html">Montaż elektryczny</a>
             </div>
           </li>
           <li><a href="#contact-form">Kontakt</a></li>
@@ -508,6 +508,7 @@
               <option value="+48">+48 (Polska)</option>
               <option value="+44">+44 (Wielka Brytania)</option>
               <option value="+1">+1 (Stany Zjednoczone)</option>
+              <option value="+49">+49 (Niemcy)</option>
               <!-- Dodaj więcej opcji numerów kierunkowych -->
             </select>
             <input
@@ -537,7 +538,10 @@
     </section>
 
     <footer>
-      <p>© 2025 Prezentacja Produktu. Wszelkie prawa zastrzeżone.</p>
+      <p>
+        © 2025 AMB-Poland. Wszelkie prawa zastrzeżone. Korzystanie z serwisu
+        oznacza akceptację regulaminu.
+      </p>
     </footer>
 
     <script>
@@ -558,16 +562,16 @@
       //Obsługa rozwijania menu na urządzeniach dotykowych
       const dropdownLi = document.querySelector(".dropdown");
       const montazElektrycznyLink = document.querySelector(
-        '.dropdown-content a[href="strona1.html"]'
+        '.dropdown-content a[href="montazElektryczny.html"]'
       );
       const frezowanieLink = document.querySelector(
-        '.dropdown-content a[href="strona2.html"]'
+        '.dropdown-content a[href="frezowanie.html"]'
       );
       const obrobkaLaseremLink = document.querySelector(
-        '.dropdown-content a[href="strona3.html"]'
+        '.dropdown-content a[href="laser.html"]'
       );
       const prefabrykacjaLink = document.querySelector(
-        '.dropdown-content a[href="strona4.html"]'
+        '.dropdown-content a[href="prefabrykacja.html"]'
       );
 
       montazElektrycznyLink.addEventListener("click", function (e) {
